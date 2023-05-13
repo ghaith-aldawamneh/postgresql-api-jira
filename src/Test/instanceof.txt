@@ -1,0 +1,49 @@
+type ErrorData = { [key: string]: any };
+class CustomError extends Error {
+  constructor(
+    public message: string,
+    public code: string | number = 'INTERNAL_ERROR',
+    public status: number = 500,
+    public data: ErrorData = {},
+  ) {
+    super();
+  }
+}
+const isErrorSafeForClient = {message:"sdwd"} instanceof CustomError;
+const clientError = isErrorSafeForClient
+  ? "yes"
+  : "no"
+console.log(clientError)
+
+
+/////////////////////////
+
+class Person {
+  protected name: string;
+   constructor(theName?: string | undefined) {
+    if(theName)
+    theName && (()=>this.name = theName);
+  }
+}
+ 
+// Employee can extend Person
+class Employee extends Person {
+  public department: string;
+ 
+  constructor(name: string, department: string) {
+    super();
+    this.department = department + name;
+    
+  }
+ 
+  public getElevatorPitch() {
+    return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+  }
+}
+
+const a1 = new Person("1111");
+const a2 = new Employee("1111","22222");
+
+  console.log(a1 instanceof Employee)//false
+  console.log(a2 instanceof Person)//true
+  console.log(a2 instanceof Employee)//true

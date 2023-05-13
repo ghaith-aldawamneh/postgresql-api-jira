@@ -1,0 +1,49 @@
+
+ class Greeter {
+    greeting: string;
+   
+    constructor(message: string) {
+      this.greeting = message;
+    }
+   
+    public greet() {
+      const ii=  "Hello, " + this.greeting;
+      console.log(ii)
+    }
+  }
+  type EntityConstructor = typeof Project 
+
+  const entities: { [key: string]: EntityConstructor } = {  Project  };
+console.log("entities111",entities)
+console.log("Project111:",entities["Project"])
+console.log("Object. keys():",Object.keys(entities["Project"]))
+
+  let Greeter1=new Greeter('gg');
+  console.log("type",typeof Greeter);
+  console.log("type",typeof Greeter1.greet());
+  console.log("type_Greeter1",typeof Greeter1);
+  console.log("project", Project);
+  console.log("Project.name", Project.name);
+  console.log("Project.name", Project);
+  //type p_type=  Project
+  //type EntityConstructor1 = typeof Project
+  //const instance = <T extend EntityConstructor1>
+  //(instance: T):Promise<InstanceType<T>>=>
+  //{return instance as Promise<InstanceType<T>>;};
+  
+  console.log("project_as", Project ); 
+  console.log("type_project",typeof Project);
+  console.log("project.constructor.name",Project.constructor.name);
+   const ff = (d:any)=>(f:any):number=>{
+    if(d){
+      return d+f+1}
+    else{ 
+     return 2+1}}
+     const gg = ff(5)
+   console.log("ffffff",gg(7))
+  const v_before = [{ss:'23'},{tt:'50'}]
+  console.log(v_before)
+  console.log(v_before.flat())
+  const fieldErrors: { [key: string]: string } = {}
+  fieldErrors['ddd']='dd'
+  console.log("fieldErrors['ddd']",fieldErrors['ddddd'])
