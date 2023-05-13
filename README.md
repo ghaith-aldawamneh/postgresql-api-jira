@@ -116,7 +116,6 @@ this project especially the API part did not work, I analyzed the reason, and at
   - wheras extends EntityInstance to store the data and (instance.constructor.name) and it can also use the methods of BaseEntity of the father parent class
   - EntityConstructor= typeof Project : Promise<InstanceType<T>> 
   - EntityInstance Project | User (we can use the methods of BaseEntity .findone ,etc...)
-  - 
   - const entities:{[key:string]:EntityConstructor}={Comment, Issue,Project,User};
   - findEntityOrThrow<T ex EntityConstructor>(Constructor:T,id:N/S,FindOneOptions):Promise<InstanceType<T>>{const instance = await findEntityOrThrow(id, options);
   - validateAndSaveEntity<SAME AS MENTIONED ABOVE>(instanse:T):Promise<T>{const Constructor = entities[instance.constructor.name];
@@ -148,7 +147,6 @@ this project especially the API part did not work, I analyzed the reason, and at
   - type
   
 ## typescripts basics:
- - 
  - declare is used to tell the compiler "this thing (usually a variable) exists already, and therefore can be referenced by other code, also there is no need to compile this statement into any JavaScript".
  - ensure type properties exist, for example function identity<T>(arg: T): T { console.log(arg.length); return arg; }
  - Explicitly supporting arrays function identity<T>(arg: T[]): T[] { console.log(arg.length); return arg; }
@@ -156,7 +154,6 @@ this project especially the API part did not work, I analyzed the reason, and at
  - class Department<T> {private employees:Array<T> = new Array<T>();add(employee: T): void {this.employees.push(employee)}{manipulate typed arrays.}
  - validating that a key exists on an object, for example function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] { return obj[key]; }
  - wrapping your API handlers in one class especially in API services, for example, class APIService extends API { public getRecords<T, U> (endpoint: string, params: T[]): U[]{}}.
- - 
  - Primitive, it is data that is not an object and has no methods or properties(string, number, bigint, boolean, undefined, symbol, null)
  - The implementation of generics in Typescript, Generic Interfaces
  - 'T' is going to be a type declared at run-time
